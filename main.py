@@ -54,7 +54,7 @@ sys.path.append('..')
 
 
 
-@app.post('/questions')
+@app.post('neuro//questions')
 def generate_questions(n:int,text:str):
     try:
         data = get_questions(n,text)
@@ -63,7 +63,7 @@ def generate_questions(n:int,text:str):
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
  
-@app.post("/mp3")
+@app.post("neuro//mp3")
 def read_root(file: UploadFile):
     try:
         if file.filename.split('.')[1] !='mp3':
